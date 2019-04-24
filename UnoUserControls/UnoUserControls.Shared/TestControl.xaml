@@ -1,0 +1,33 @@
+﻿<UserControl
+    x:Class="UnoUserControls.Shared.TestControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UnoUserControls.Shared"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    <StackPanel Orientation="Horizontal">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="CheckBoxStates">
+                <VisualState x:Name="Unchecked">
+                    <VisualState.Setters>
+                        <Setter Target="stateName.Text" Value="Unchecked"/>
+                        <Setter Target="checkBoxImage.Source" Value="/Assets/checkbox_unchecked.png"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Checked">
+                    <VisualState.Setters>
+                        <Setter Target="stateName.Text" Value="Checked"/>
+                        <Setter Target="checkBoxImage.Source" Value="/Assets/checkbox_checked.png"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <TextBlock x:Name="stateName" Text="Not Defined"/>
+        <Image x:Name="checkBoxImage" Source="/Assets/checkbox_unchecked.png" Height="64" Margin="12"/>
+        <Button x:Name="uncheckButton" Content="UnChecked" Click="uncheckButton_Click"/>
+        <Button x:Name="checkButton" Content="Checked" Click="checkButton_Click"/>
+    </StackPanel>
+</UserControl>
